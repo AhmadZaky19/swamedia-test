@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Container, Form, Button } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
-// import axios from "../../utils/axios";
+import axios from "../../utils/axios";
 import { post } from "../../stores/actions/post";
 
 const Post = () => {
@@ -23,10 +23,13 @@ const Post = () => {
     });
   };
 
+  // let jsonString = JSON.stringify(JSON.decycle(data));
+  // let restoredObject = JSON.retrocycle(JSON.parse(jsonString));
+
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-      const response = await dispatch(post(data));
+      const response = await axios.post("/users", data);
       console.log(response);
       // setError(response.value.data.msg);
       toast.success("success post data");

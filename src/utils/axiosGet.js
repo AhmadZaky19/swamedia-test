@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosApiInstances = axios.create({
-  baseURL: `${process.env.REACT_APP_URL_BACKEND}`,
+  baseURL: `${process.env.REACT_APP_URL_GET}`,
 });
 
 // Add a request interceptor
@@ -9,8 +9,7 @@ axiosApiInstances.interceptors.request.use(
   function (config) {
     // Do something before request is sent
     config.headers = {
-      Authorization:
-        "Bearer 8455c5d5685200059c36aa9783ae516f26ce651715cffba3b5a4095490a6ecca",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     };
     return config;
   },
