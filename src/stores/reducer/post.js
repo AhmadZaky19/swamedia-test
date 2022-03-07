@@ -1,8 +1,8 @@
 const initialState = {
-  idUser: "",
+  // idUser: "",
   isError: false,
   isLoading: false,
-  msg: "",
+  // msg: "",
 };
 
 const posts = (state = initialState, action) => {
@@ -12,7 +12,7 @@ const posts = (state = initialState, action) => {
         ...state,
         isLoading: true,
         isError: false,
-        msg: "",
+        // msg: "",
       };
     }
     case "POST_FULFILLED": {
@@ -20,7 +20,7 @@ const posts = (state = initialState, action) => {
         ...state,
         isLoading: false,
         isError: false,
-        msg: action.payload.data.msg,
+        // msg: action.payload.data.msg,
       };
     }
     case "POST_REJECTED": {
@@ -28,8 +28,8 @@ const posts = (state = initialState, action) => {
         ...state,
         isLoading: false,
         isError: true,
-        idUser: "",
-        msg: action.payload.response.data.msg,
+        // idUser: "",
+        // msg: action.payload.response.data.msg,
       };
     }
     default: {

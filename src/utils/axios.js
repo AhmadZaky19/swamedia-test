@@ -13,6 +13,7 @@ axiosApiInstances.interceptors.request.use(
         "Bearer 8455c5d5685200059c36aa9783ae516f26ce651715cffba3b5a4095490a6ecca",
       "Content-Type": "application/json",
       Accept: "application/json",
+      "Access-Control-Allow-Origin": "*",
     };
     return config;
   },
